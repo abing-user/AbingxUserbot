@@ -20,7 +20,7 @@ async def get_full_user(event):
         if user.isnumeric():
             user = int(user)
         if not user:
-            await event.edit("`🔐 User ID required`")
+            await event.edit("`🥶 User ID required`")
             return
         if event.message.entities is not None:
             probable_user_mention_entity = event.message.entities[0]
@@ -34,7 +34,7 @@ async def get_full_user(event):
             user_obj = await event.client.get_entity(user)
         except Exception as err:
             return await event.edit(
-                "`🔐 Errors Found, Report to :` **[MAIN](https://t.me/akuabing)** ", str(err)
+                "`🥶 Errors Found, Report to :` **[MAIN](https://t.me/akuabing)** ", str(err)
             )
     return user_obj, extra
 
@@ -72,7 +72,7 @@ async def handler(tele):
                                 tele.chat_id, guser.id, view_messages=False
                             )
                             await tele.reply(
-                                f"**🔐 Banned user found** \n"
+                                f"**🥶 Banned user found** \n"
                                 f"**▪️ User**: [{guser.id}](tg://user?id={guser.id})\n"
                                 f"**▪️ Action**  : `Banned`"
                             )
@@ -87,11 +87,11 @@ async def gben(userbot):
     sender = await dc.get_sender()
     me = await dc.client.get_me()
     if not sender.id == me.id:
-        dark = await dc.reply("`🔐 Starting Gban`")
+        dark = await dc.reply("`🥶 Starting Gban`")
     else:
-        dark = await dc.edit("`🔐 Waiting Gban`")
+        dark = await dc.edit("`🥶 Waiting Gban`")
     me = await userbot.client.get_me()
-    await dark.edit(f"`🔐 Processing Gban`")
+    await dark.edit(f"`🥶 Processing Gban`")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
     await userbot.get_chat()
@@ -109,11 +109,11 @@ async def gben(userbot):
         if not reason:
             reason = "Private"
     except BaseException:
-        return await dark.edit(f"`🔐 Stopping Process`")
+        return await dark.edit(f"`🥶 Stopping Process`")
     if user:
         if user.id in DEVS:
             return await dark.edit(
-                f"`🔐 Stoping process By` **[MAIN](https://t.me/akuabing)** "
+                f"`🥶 Stoping process By` **[MAIN](https://t.me/akuabing)** "
             )
         try:
             from userbot.modules.sql_helper.gmute_sql import gmute
@@ -132,20 +132,20 @@ async def gben(userbot):
             try:
                 await userbot.client.edit_permissions(i, user, view_messages=False)
                 a += 1
-                await dark.edit(f"`🔐 Gban activated By :` **[MAIN](https://t.me/akuabing)**")
+                await dark.edit(f"`🥶 Gban activated By :` **[MAIN](https://t.me/akuabing)**")
             except BaseException:
                 b += 1
     else:
-        await dark.edit(f"`🔐 Reply message required`")
+        await dark.edit(f"`🥶 Reply message required`")
     try:
         if gmute(user.id) is False:
             return await dark.edit(
-                f"🔐 `This user has been banned `"
+                f"🥶 `This user has been banned `"
             )
     except BaseException:
         pass
     return await dark.edit(
-        f"**🔐 DRAGON SECURITY**\n━━━━━━━━━━━━━━━━━\n▪️ **Request:** `{ALIVE_NAME}`\n▪️ **User:** [{user.first_name}](tg://user?id={user.id})\n▪️ **Action :** `Global Banned`\n━━━━━━━━━━━━━━━━━"
+        f"**🥶 ABING SECURITY**\n━━━━━━━━━━━━━━━━━\n▪️ **Request:** `{ALIVE_NAME}`\n▪️ **User:** [{user.first_name}](tg://user?id={user.id})\n▪️ **Action :** `Global Banned`\n━━━━━━━━━━━━━━━━━"
     )
 
 
@@ -156,12 +156,12 @@ async def gunben(userbot):
     sender = await dc.get_sender()
     me = await dc.client.get_me()
     if not sender.id == me.id:
-        dark = await dc.reply("`🔐 Starting Ugnban`")
+        dark = await dc.reply("`🥶 Starting Ugnban`")
     else:
-        dark = await dc.edit("`🔐 Waiting Ungban`")
+        dark = await dc.edit("`🥶 Waiting Ungban`")
     me = await userbot.client.get_me()
     await dark.edit(
-        f"`🔐 Starting Process Unban`"
+        f"`🥶 Starting Process Unban`"
     )
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
@@ -180,11 +180,11 @@ async def gunben(userbot):
         if not reason:
             reason = "Private"
     except BaseException:
-        return await dark.edit("`🔐 Terminate Process`")
+        return await dark.edit("`🥶 Terminate Process`")
     if user:
         if user.id in DEVS:
             return await dark.edit(
-                "🔐 `Terminate Process By :` **[MAIN](https://t.me/akuabing)**"
+                "`🥶 `Terminate Process By :` **[MAIN](https://t.me/akuabing)**"
             )
         try:
             from userbot.modules.sql_helper.gmute_sql import ungmute
@@ -203,15 +203,15 @@ async def gunben(userbot):
             try:
                 await userbot.client.edit_permissions(i, user, send_messages=True)
                 a += 1
-                await dark.edit(f"`🔐 Process Ungban User `")
+                await dark.edit(f"`🥶 Process Ungban User `")
             except BaseException:
                 b += 1
     else:
-        await dark.edit("`🔐 Reply message Required`")
+        await dark.edit("`🥶 Reply message Required`")
     try:
         if ungmute(user.id) is False:
             return await dark.edit(
-                "🔐 Users are not in the black list "
+                "🥶 Users are not in the black list "
             )
     except BaseException:
         pass
