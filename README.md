@@ -29,7 +29,7 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan dengan bijak.
 
 
 ## Heroku Deployment
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/nabilrmdaan/AbingxUserbot)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/CoeF/Dep-AbingXUBot)
 
 ## Heroku Deployment Via Bot
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://telegram.dog/XTZ_HerokuBot?start=bmFiaWxybWRhYW4vQWJpbmd4VXNlcmJvdCBBYmluZw)
