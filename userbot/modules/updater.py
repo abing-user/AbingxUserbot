@@ -57,7 +57,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         if HEROKU_APP_NAME is None:
             await event.edit(
                 "`[HEROKU]: Harap Siapkan Variabel` **HEROKU_APP_NAME** `"
-                " untuk dapat deploy perubahan terbaru dari 🔐 Dragon-Userbot.`"
+                " untuk dapat deploy perubahan terbaru dari 🥶 AbingxUserbot.`"
             )
             repo.__del__()
             return
@@ -67,11 +67,11 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
                 break
         if heroku_app is None:
             await event.edit(
-                f"{txt}\n`Kredensial Heroku tidak valid untuk deploy Black-Dragon dyno.`"
+                f"{txt}\n`Kredensial Heroku tidak valid untuk deploy ABINGXUSERBOT dyno.`"
             )
             return repo.__del__()
         await event.edit(
-            "🔐 `DRAGON-USERBOT :` `Sedang MengUpdate`" "\n`Mohon Menunggu 5-7 Menit`"
+            "🥶 `ABINGXUSERBOT :` `Sedang MengUpdate`" "\n`Mohon Menunggu 5-7 Menit`"
         )
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
@@ -97,14 +97,14 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             return await event.delete()
         else:
             await event.edit(
-                "🔐 `Dragon-Userbot Berhasil DiUpdate,Restart Tunggu Sebentar`"
+                "🥶 `AbingxUserbot Berhasil DiUpdate,Restart Tunggu Sebentar`"
             )
             await asyncio.sleep(15)
             await event.delete()
 
         if BOTLOG:
             await event.client.send_message(
-                BOTLOG_CHATID, "#BOT \n" "`🔐 Dragon-Userbot Berhasil Di Update`"
+                BOTLOG_CHATID, "#BOT \n" "`🥶 AbingxUserbot Berhasil Di Update`"
             )
 
     else:
@@ -122,17 +122,17 @@ async def update(event, repo, ups_rem, ac_br):
     except GitCommandError:
         repo.git.reset("--hard", "FETCH_HEAD")
     await update_requirements()
-    await event.edit("**🔐DRAGON-USERBOT** `Finishing`")
+    await event.edit("**🥶 ABINGXUSERBOT** `Finishing`")
     await asyncio.sleep(1)
-    await event.edit("**🔐 DRAGON-USERBOT** `Restarting`")
+    await event.edit("**🥶 ABINGXUSERBOT** `Restarting`")
     await asyncio.sleep(1)
-    await event.edit("**🔐 DRAGON-USERBOT** `Starting Up`")
+    await event.edit("**🥶 ABINGXUSERBOT** `Starting Up`")
     await asyncio.sleep(10)
     await event.delete()
 
     if BOTLOG:
         await event.client.send_message(
-            BOTLOG_CHATID, "#BOT \n" "**🔐 DRAGON-USERBOT :** `Update Done`"
+            BOTLOG_CHATID, "#BOT \n" "**🥶 ABINGXUSERBOT :** `Update Done`"
         )
         await asyncio.sleep(100)
         await event.delete()
@@ -146,7 +146,7 @@ async def update(event, repo, ups_rem, ac_br):
 @register(outgoing=True, pattern=r"^.update(?: |$)(now|deploy)?")
 async def upstream(event):
     "For .update command, check if the bot is up to date, update if specified"
-    await event.edit("**🔐 DRAGON-USERBOT :** `Looking for updates`")
+    await event.edit("**🥶 ABINGXUSERBOT :** `Looking for updates`")
     conf = event.pattern_match.group(1)
     off_repo = UPSTREAM_REPO_URL
     force_update = False
@@ -196,7 +196,7 @@ async def upstream(event):
 
     if changelog == "" and force_update is False:
         await event.edit(
-            f"\n🔐 DRAGON-USERBOT : \n"
+            f"\n🥶 ABINGXUSERBOT : \n"
             f"Is Up to Date By : **[MAIN](https://t.me/akuabing)** \n "
         )
         await asyncio.sleep(20)
@@ -205,7 +205,7 @@ async def upstream(event):
 
     if conf is None and force_update is False:
         changelog_str = (
-            f"🔐 `Dragon-Userbot Update` \n"
+            f"🥶 `AbingxUserbot Update` \n"
         )
         if len(changelog_str) > 4096:
             await event.edit("`Changelog Terlalu Besar, Lihat File Untuk Melihatnya.`")
@@ -221,7 +221,7 @@ async def upstream(event):
         else:
             await event.edit(changelog_str)
         return await event.respond(
-            "🔐 `Update By` :  **[MAIN](https://t.me/akuabing)** "
+            "🥶 `Update By` :  **[MAIN](https://t.me/akuabing)** "
         )
 
     if force_update:
@@ -229,12 +229,12 @@ async def upstream(event):
             "`Sinkronisasi Paksa Ke Kode Userbot Stabil Terbaru, Harap Tunggu .....`"
         )
     else:
-        await event.edit("` 🔐 Dragon-Userbot , Loading....1%`")
-        await event.edit("` 🔐 Dragon-Userbot , Loading....20%`")
-        await event.edit("` 🔐 Dragon-Userbot , Loading....35%`")
-        await event.edit("` 🔐 Dragon-Userbot , Loading....77%`")
-        await event.edit("` 🔐 Dragon-Userbot , Updating...90%`")
-        await event.edit("` 🔐 Dragon-Userbot , Finishing...100%`"
+        await event.edit("` 🥶 AbingxUserbot , Loading....1%`")
+        await event.edit("` 🥶 AbingxUserbot , Loading....20%`")
+        await event.edit("` 🥶 AbingxUserbot , Loading....35%`")
+        await event.edit("` 🥶 AbingxUserbot , Loading....77%`")
+        await event.edit("` 🥶 AbingxUserbot , Updating...90%`")
+        await event.edit("` 🥶 AbingxUserbot , Finishing...100%`"
         )
 
     if conf == "now":
